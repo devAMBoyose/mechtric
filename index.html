@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lovato GL Isolator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assest/main.css">
+  
+</head>
+<body>
+  <!-- Top Navbar -->
+  <nav class="top-navbar">
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="nav-left">
+      <img src="/assest/img/Logo_lovatoelectric.png" alt="Lovato Electric Logo" class="logo">
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Document HUB</a></li>
+      <li><a href="#">Academy</a></li>
+      <li><a href="#">News & Events</a></li>
+      <li><a href="#">Contacts</a></li>
+
+      <!-- Weather Box moves here on mobile -->
+      <li class="weather-mobile">
+        <div class="weather-box">
+          Current Weather - Manila<br>
+          Temp: <span class="blinking-temp">28.4°C</span><br>
+          Wind: <span class="blinking-temp">29.8 km/h</span>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Desktop Weather -->
+    <div class="nav-right">
+      <div class="weather-box desktop-weather">
+        Current Weather - Manila<br>
+        Temp: <span class="blinking-temp">28.4°C</span><br>
+        Wind: <span class="blinking-temp">29.8 km/h</span>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      nav.classList.toggle('show');
+    }
+  </script>
+
+<header class="hero-header">
+  <h1>Lovato GL Isolator</h1>
+  <p>Industrial Power Control. Simplified.</p>
+</header>
+
+<section class="hero-section">
+  <div class="hero-text">
+    <h2>What it is</h2>
+    <p>The Lovato GL Isolator is a robust, industrial-grade switch disconnector designed to safely isolate power in heavy-duty electrical systems.</p>
+
+    <h2>What it does</h2>
+    <p>It ensures safe disconnection of circuits, maintenance protection, and reliable power cutoff in compliance with international standards.</p>
+
+    <h2>Why it matters</h2>
+    <p>With its durable build, compact design, and reliable performance, the Lovato GL Isolator reduces downtime and enhances operational safety across industrial sites.</p>
+  </div>
+
+  <div class="hero-image">
+    <img id="rotatingImage" src="https://i.ibb.co/XZRDnYLX/GL-UL-version-image-1.png" alt="Lovato GL Isolator" />
+  </div>
+</section>
+
+<div class="container my-5">
+  <div class="row justify-content-center align-items-start">
+    
+    <!-- Left: Specifications -->
+    <div class="col-md-5 mb-4">
+      <section>
+        <h3 class="mb-3" style="color: #1a1a1a;">Specifications</h3>
+        <table class="table table-bordered mb-0">
+          <tr><th>Model</th><td>GL063M</td></tr>
+          <tr><th>Rated Current</th><td>63 A</td></tr>
+          <tr><th>Poles</th><td>3P</td></tr>
+          <tr><th>Insulation Voltage</th><td>690V</td></tr>
+          <tr><th>Standards</th><td>IEC/EN 60947-3</td></tr>
+        </table>
+      </section>
+    </div>
+
+    <!-- Right: Request a Quote -->
+    <div class="col-md-5 mb-4">
+      <div class="border p-4 shadow-sm" style="height: 100%;">
+        <h3 class="mb-4" style="color: #1a1a1a;">Request a Quote</h3>
+        <form id="quote-form">
+          <div class="mb-3">
+            <label class="form-label" for="name">Your Name</label>
+            <input type="text" class="form-control" id="name" name="user_name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="email">Your Email</label>
+            <input type="email" class="form-control" id="email" name="user_email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="message">Product Inquiry</label>
+            <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn w-100" style="background-color: #1a1a1a; color: white;">Send Request</button>
+        </form>
+        <div id="quote-status" class="mt-3"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+<br>
+<section id="product-section">
+ <h3 style="text-align:center; font-size: 28px; font-weight: 700; color: #e75225;">
+  Featured Lovato Products
+</h3>
+  <div id="product-list" class="product-grid"></div>
+</section>
+
+</body>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <img src="/assest/img/Logo_lovatoelectric.png" alt="Lovato Electric Logo" class="footer-logo">
+    <p>&copy; 2025 Lovato GL Isolator Microsite. Designed by <strong>BAMBy</strong>.</p>
+  </div>
+</footer>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+ <!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS
+  (function() {
+    emailjs.init("r75dW2dvdrBixDThV"); 
+  })();
+
+  // Form submission handler
+  document.getElementById('quote-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_z2oj5qi', 'template_91vvlbs', this)
+      .then(function(response) {
+        document.getElementById('quote-status').innerHTML = "<span style='color: green;'>✅ Quote request sent successfully!</span>";
+      }, function(error) {
+        document.getElementById('quote-status').innerHTML = "<span style='color: red;'>❌ Failed to send. Please try again later.</span>";
+        console.error("EmailJS error:", error);
+      });
+
+    // Optional: Reset form
+    this.reset();
+  });
+</script>
+
+  <script src="./assest/api.js"></script>
+  <script src="./assest/industrial.js"></script>
+  <script src="/assest/images.js"></script>
+
+</html>
