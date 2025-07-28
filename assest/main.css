@@ -85,6 +85,19 @@
     margin-bottom: 10px;
   }
 }
+/* Navbar Hover Effect */
+.nav-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  background-color: #e75225;
+  color: #fff;
+}
 
 
 .blinking-temp {
