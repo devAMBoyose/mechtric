@@ -9,19 +9,15 @@
   
 </head>
 <body>
-  <!-- Top Navbar -->
-  <nav class="top-navbar">
-  <div class="nav-container">
 
-    <!-- LOGO -->
+<!-- Navigation Bar (fixed at top) -->
+<nav class="top-navbar">
+  <div class="nav-container">
     <div class="nav-left">
       <img src="/assest/img/Logo_lovatoelectric.png" alt="Lovato Electric Logo" class="logo">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
 
-    <!-- Hamburger Icon -->
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-
-    <!-- Nav Links -->
     <ul class="nav-links" id="nav-links">
       <li><a href="#">About us</a></li>
       <li><a href="#">Products</a></li>
@@ -31,40 +27,44 @@
       <li><a href="#">News & Events</a></li>
       <li><a href="#">Contacts</a></li>
 
-      <!-- Weather Box moves here on mobile -->
+      <!-- Weather for mobile -->
       <li class="weather-mobile">
         <div class="weather-box">
-          Current Weather - Manila<br>
-          Temp: <span class="blinking-temp">28.4°C</span><br>
-          Wind: <span class="blinking-temp">29.8 km/h</span>
+          <p><strong>Current Weather - Manila</strong></p>
+          <p>Temp: <span class="blinking-temp">28.4°C</span></p>
+          <p>Wind: <span class="blinking-temp">29.8 km/h</span></p>
         </div>
       </li>
     </ul>
-
-    <!-- Desktop Weather -->
-    <div class="nav-right">
-      <div class="weather-box desktop-weather">
-        Current Weather - Manila<br>
-        Temp: <span class="blinking-temp">28.4°C</span><br>
-        Wind: <span class="blinking-temp">29.8 km/h</span>
-      </div>
-    </div>
-
   </div>
 </nav>
+<!-- Weather Ticker + City Selector -->
+<section class="weather-ticker-wrapper">
+  <div class="weather-bar">
+    <label for="city-select"><strong>Current Weather - </strong></label>
+    <select id="city-select" onchange="fetchWeather(this.value)">
+      <option value="manila">Manila</option>
+      <option value="cebu">Cebu</option>
+      <option value="davao">Davao</option>
+    </select>
+    <span id="weather-text">Loading...</span>
+  </div>
+</section>
 
-  <!-- JavaScript -->
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('nav-links');
-      nav.classList.toggle('show');
-    }
-  </script>
 
+<!-- Hero Section -->
 <header class="hero-header">
   <h1>Lovato GL Isolator</h1>
   <p>Industrial Power Control. Simplified.</p>
 </header>
+
+<!-- JavaScript for Hamburger Toggle -->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('show');
+  }
+</script>
 
 <section class="hero-section">
   <div class="hero-text">
@@ -126,6 +126,8 @@
   </div>
 </div>
 
+
+   
 <hr>
 <br>
 <section id="product-section">
